@@ -8,6 +8,15 @@ public class BubbleSortImproved implements Sort{
 
     @Override
     public void sort(int[] arr) {
+        bubbleSortImproved(arr);
+    }
+
+    @Override
+    public String getName() {
+        return("BUBBLE SORT IMPROVED");
+    }
+
+    private void bubbleSortImproved(int[] arr) {
         boolean sorted;
         for(int i = 0; i < arr.length; i++) {
             sorted = true;
@@ -23,11 +32,6 @@ public class BubbleSortImproved implements Sort{
                 break;
             }
         }
-    }
-
-    @Override
-    public String getName() {
-        return("BUBBLE SORT IMPROVED");
     }
 
     public static void main(String[] args) {

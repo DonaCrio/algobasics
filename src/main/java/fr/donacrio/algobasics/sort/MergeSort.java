@@ -8,7 +8,7 @@ public class MergeSort implements Sort{
 
     @Override
     public void sort(int[] arr) {
-        mergeSortHelper(arr, 0, arr.length - 1);
+        mergeSort(arr, 0, arr.length - 1);
     }
 
     @Override
@@ -16,18 +16,18 @@ public class MergeSort implements Sort{
         return("MERGE SORT");
     }
 
-    private void mergeSortHelper(int[] arr, int lower, int upper) {
-        if(lower < upper) {
-            int mid = (lower + upper) / 2;
-            mergeSortHelper(arr, lower, mid);
-            mergeSortHelper(arr, mid + 1, upper);
-            merge(arr, lower, mid, upper);
+    private void mergeSort(int[] arr, int lower, int higher) {
+        if(lower < higher) {
+            int mid = (lower + higher) / 2;
+            mergeSort(arr, lower, mid);
+            mergeSort(arr, mid + 1, higher);
+            merge(arr, lower, mid, higher);
         }
     }
 
-    private void merge(int[] arr, int lower, int mid, int upper) {
+    private void merge(int[] arr, int lower, int mid, int higher) {
         int sizeLeft = mid - lower + 1;
-        int sizeRight = upper - mid;
+        int sizeRight = higher - mid;
 
         int[] L = new int[sizeLeft];
         int[] R = new int[sizeRight];

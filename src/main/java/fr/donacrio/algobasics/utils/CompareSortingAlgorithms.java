@@ -1,10 +1,7 @@
 package fr.donacrio.algobasics.utils;
 
 import com.github.plot.Plot;
-import fr.donacrio.algobasics.sort.BubbleSort;
-import fr.donacrio.algobasics.sort.BubbleSortImproved;
-import fr.donacrio.algobasics.sort.MergeSort;
-import fr.donacrio.algobasics.sort.Sort;
+import fr.donacrio.algobasics.sort.*;
 
 import java.awt.*;
 import java.io.IOException;
@@ -69,10 +66,11 @@ public class CompareSortingAlgorithms {
 
     public static void main(String[] args) {
         List<Sort> sorts = new ArrayList<>();
-        sorts.add(new BubbleSort());
-        sorts.add(new BubbleSortImproved());
+        // sorts.add(new BubbleSort());
+        // sorts.add(new BubbleSortImproved());
+        sorts.add(new QuickSort());
         sorts.add(new MergeSort());
         CompareSortingAlgorithms comparator = new CompareSortingAlgorithms();
-        comparator.compare(sorts, 10000, 100, "test");
+        comparator.compare(sorts, 1000000, 1000, "test");
     }
 }
